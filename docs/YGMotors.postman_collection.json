@@ -13,7 +13,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n  \"brand\": \"Toyota\",\n  \"model\": \"Corolla\",\n  \"year\": 2018,\n  \"color\": \"Prata\",\n  \"price\": 45000\n}",
+					"raw": "{\n  \"brand\": \"Chevrolet\",\n  \"model\": \"Onix\",\n  \"year\": 2018,\n  \"color\": \"Branco\",\n  \"price\": 66000\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -29,6 +29,61 @@
 					"port": "8000",
 					"path": [
 						"vehicle"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateVehicleUseCase",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"color\": \"Preto\",\n  \"year\": 2019\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/vehicle/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"vehicle",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ListVehicleByStatusUseCase",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/vehicle/list?status=Available",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"vehicle",
+						"list"
+					],
+					"query": [
+						{
+							"key": "status",
+							"value": "Available"
+						}
 					]
 				}
 			},
