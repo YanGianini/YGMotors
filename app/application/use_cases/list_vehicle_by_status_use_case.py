@@ -1,11 +1,12 @@
 from app.application.ports.vehicle_repository import VehicleRepository
 from app.domain.models.vehicle import Vehicle
+from app.domain.models.vehicle_status import VehicleStatusEnum
 
 
 class ListVehiclesByStatusUseCase:
     def __init__(self, vehicle_repository: VehicleRepository):
         self.vehicle_repository = vehicle_repository
 
-    async def execute(self, status: str) -> list[Vehicle]:
+    async def execute(self, status: VehicleStatusEnum) -> list[Vehicle]:
         return await self.vehicle_repository.list_by_status(status)
     

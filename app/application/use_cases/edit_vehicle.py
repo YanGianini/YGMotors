@@ -9,9 +9,8 @@ class UpdateVehicleUseCase:
         self.vehicle_repository = vehicle_repository
 
     async def execute(self, vehicle_id: int, data: Dict[str, Any]) -> Vehicle:
-        vehicle = await self.vehicle_repository.get_by_id(vehicle_id)
+        vehicle = await self.vehicle_repository.update(vehicle_id, data)
         if not vehicle:
             raise ValueError("Vehicle not found")
-            
-        return await self.vehicle_repository.update(vehicle_id, data)
+        return vehicle
 

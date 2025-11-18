@@ -58,5 +58,5 @@ async def list_vehicles(
     status: VehicleStatusEnum,
     use_case: ListVehiclesByStatusUseCase = Depends(get_list_by_status_use_case)
 ):
-    vehicles = await use_case.execute(status)
-    return vehicles
+    return await use_case.execute(status)
+     
