@@ -30,3 +30,18 @@ class Vehicle:
             created_at=now,
             updated_at=now,
         )
+
+    @classmethod
+    def from_orm(cls, orm_obj):
+        return cls(
+            id=orm_obj.id,
+            brand=orm_obj.brand,
+            model=orm_obj.model,
+            year=orm_obj.year,
+            color=orm_obj.color,
+            price=orm_obj.price,
+            status=orm_obj.status,
+            created_at=orm_obj.created_at,
+            updated_at=orm_obj.updated_at
+        )
+

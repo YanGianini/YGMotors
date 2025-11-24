@@ -6,13 +6,15 @@ from logging.config import fileConfig
 from alembic import context
 from sqlalchemy.ext.asyncio import create_async_engine
 from sqlalchemy import pool
+from app.infra.database.orm_base import Base
+
 
 BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 sys.path.append(BASE_DIR)
 
 from app.settings import settings
-from app.infra.database.tables import metadata
-
+from app.infra.database.models import vehicle_orm
+from app.infra.database.models import sale_orm
 
 config = context.config
 
@@ -21,7 +23,7 @@ if config.config_file_name is not None:
     fileConfig(config.config_file_name)
 
 # target metadata para autogenerate
-target_metadata = metadata
+target_metadata = Base.metadata
 
 
 def get_url() -> str:

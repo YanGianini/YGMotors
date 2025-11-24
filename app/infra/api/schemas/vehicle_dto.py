@@ -1,3 +1,4 @@
+from typing import Optional
 from app.domain.models.vehicle_status import VehicleStatusEnum
 from pydantic import BaseModel, Field
 
@@ -21,3 +22,15 @@ class VehicleResponse(BaseModel):
 
     class Config:
         from_attributes = True
+
+class VehicleUpdateRequest(BaseModel):
+    brand: Optional[str] = None
+    model: Optional[str] = None
+    year: Optional[int] = None
+    color: Optional[str] = None
+    price: Optional[float] = None
+    status: Optional[str] = None
+
+    class Config:
+        extra = "forbid"
+        
