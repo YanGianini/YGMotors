@@ -14,6 +14,7 @@ sys.path.append(BASE_DIR)
 
 from app.settings import settings
 from app.infra.database.models import vehicle_orm
+from app.infra.database.models import sale_orm
 
 config = context.config
 

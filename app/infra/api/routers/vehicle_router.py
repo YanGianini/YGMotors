@@ -1,10 +1,10 @@
 from fastapi import APIRouter, Depends, Query
 from sqlalchemy.ext.asyncio import AsyncSession
-from app.application.use_cases.edit_vehicle import UpdateVehicleUseCase
+from app.application.use_cases.edit_vehicle_use_case import UpdateVehicleUseCase
 from app.application.use_cases.list_vehicle_by_status_use_case import ListVehiclesByStatusUseCase
 from app.domain.models.vehicle_status import VehicleStatusEnum
 from app.infra.api.schemas.vehicle_dto import VehicleCreateRequest, VehicleResponse, VehicleUpdateRequest
-from app.application.use_cases.create_vehicle import CreateVehicleUseCase
+from app.application.use_cases.create_vehicle_use_case import CreateVehicleUseCase
 from app.infra.database.database import get_session
 from app.infra.persistence.repositories.vehicle_repository_impl import VehicleRepositoryImpl
 

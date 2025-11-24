@@ -28,6 +28,7 @@ com **SQLAlchemy**, **Alembic** para migrations e **PostgreSQL** para o banco de
 - **Python** (Fast API): Framework para construção de aplicações em python com performance e simplicidade.
 - **Docker**: Ferramenta de containerização para garantir a portabilidade e consistência do ambiente.
 - **PostgreSQL**: Banco de dados relacional utilizado para persistência de dados.
+- **Alembic**: Ferramenta para versionar as alterações no banco de dados
 - **Arquitetura Hexagonal**: Padrão arquitetural focado em modularidade e independência de tecnologias externas.
 - **Swagger/OpenAPI**: Ferramenta para documentação interativa e testes das APIs.
 
@@ -79,6 +80,16 @@ Siga os passos abaixo para configurar e executar o projeto em seu ambiente local
    ```
 
   para continuar rodando o projeto é possivel utilizar tanto o "docker compose up" ou "make run"
+
+4. **Adicionar migração Alembic**
+
+  ### Adicionar import do ModelORM adicionado ao arquivo alembic/versions/env.py
+  ### No shell do container rodar
+   ```bash
+   alembic revision --autogenerate -m "seu texto descritivo da migração"
+   ```
+
+  caso seja apenas uma alteração basta rodar o comando acima.
 ---
 
 ## Documentação e Acesso
